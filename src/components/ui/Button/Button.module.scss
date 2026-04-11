@@ -18,7 +18,6 @@
   text-decoration: none;
 }
 
-/* Variants */
 .primary {
   background: var(--bg-dark);
   color: #fff;
@@ -53,13 +52,11 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Sizes */
 .sm {
   padding: 10px 22px;
   font-size: 14px;
 }
 
-/* Modifiers */
 .fullWidth {
   width: 100%;
 }

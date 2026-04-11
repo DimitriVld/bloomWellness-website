@@ -19,7 +19,6 @@
   padding-block: 60px;
 }
 
-/* Left content */
 .content {
   flex: 1;
   max-width: 520px;
@@ -71,7 +70,6 @@
   flex-wrap: wrap;
 }
 
-/* Right phones */
 .phones {
   position: relative;
   width: 340px;
@@ -116,7 +114,6 @@
   display: block;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .inner {
     flex-direction: column;

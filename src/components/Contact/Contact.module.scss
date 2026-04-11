@@ -9,7 +9,6 @@
   align-items: start;
 }
 
-/* Left */
 .left {
   display: flex;
   flex-direction: column;
@@ -78,7 +77,6 @@
   background: linear-gradient(135deg, #1e3b36, #10b981);
 }
 
-/* Right — form */
 .formCard {
   background: var(--bg-card);
   border: 1px solid rgba(30, 59, 54, 0.08);
@@ -125,7 +123,6 @@
   line-height: 1.55;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;

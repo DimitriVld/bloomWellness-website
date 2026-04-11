@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import { MenuIcon, XIcon } from "@/components/ui/Icons";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 
 const NAV_LINKS = [
   { label: "Mon histoire", href: "#story" },
@@ -39,14 +39,13 @@ export default function Header() {
           {/* Logo */}
           <a href="#" className={styles.logo} aria-label="BloomWellness — Accueil">
             <Image
-              src="/images/icon-small.png"
+              src="/images/brand/Bw-icon-bg-green.png"
               alt=""
               width={34}
               height={34}
               className={styles.logoIcon}
               priority
             />
-            <span className={styles.logoText}>BloomWellness</span>
           </a>
 
           {/* Desktop nav */}

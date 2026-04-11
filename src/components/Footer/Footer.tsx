@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 
 const APP_LINKS = [
   { label: "Télécharger", href: "#pricing" },

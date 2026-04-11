@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import styles from "./Showcase.module.css";
+import styles from "./Showcase.module.scss";
 
 const SLIDES = [
   {

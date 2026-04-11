@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader/SectionHeader";
 import Button from "@/components/ui/Button/Button";
 import { CheckIcon } from "@/components/ui/Icons";
-import styles from "./Pricing.module.css";
+import styles from "./Pricing.module.scss";
 
 const PLANS = [
   {

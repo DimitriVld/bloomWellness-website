@@ -10,7 +10,6 @@
   margin-inline: auto;
 }
 
-/* Header */
 .header {
   text-align: center;
   margin-bottom: 48px;
@@ -52,7 +51,6 @@
   font-style: italic;
 }
 
-/* Body — 2 columns */
 .body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -70,7 +68,6 @@
   font-weight: 600;
 }
 
-/* Quote */
 .quote {
   width: 100%;
   position: relative;
@@ -101,7 +98,6 @@
   color: var(--text-mid);
 }
 
-/* Highlights */
 .highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -141,7 +137,6 @@
   line-height: 1.4;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .body {
     grid-template-columns: 1fr;

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import { MailIcon, InstagramIcon, SendIcon } from "@/components/ui/Icons";
-import styles from "./Contact.module.css";
+import styles from "./Contact.module.scss";
 
 const ease = [0.23, 1, 0.32, 1] as const;
 

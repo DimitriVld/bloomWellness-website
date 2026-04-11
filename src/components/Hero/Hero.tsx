@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import { AppleIcon, CheckIcon } from "@/components/ui/Icons";
-import styles from "./Hero.module.css";
+import styles from "./Hero.module.scss";
 
 const ease = [0.23, 1, 0.32, 1] as const;
 

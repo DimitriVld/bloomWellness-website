@@ -11,7 +11,7 @@ import {
   DropletIcon,
   UtensilsIcon,
 } from "@/components/ui/Icons";
-import styles from "./Features.module.css";
+import styles from "./Features.module.scss";
 
 const FEATURES = [
   {

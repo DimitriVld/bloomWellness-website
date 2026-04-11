@@ -17,7 +17,6 @@
   padding-bottom: 60px;
 }
 
-/* Brand column */
 .brand {
   display: flex;
   flex-direction: column;
@@ -41,7 +40,6 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Other columns */
 .col {
   display: flex;
   flex-direction: column;
@@ -73,7 +71,6 @@
   color: rgba(255, 255, 255, 0.95);
 }
 
-/* Bottom bar */
 .bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 24px 0;
@@ -89,7 +86,6 @@
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
