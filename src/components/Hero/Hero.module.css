@@ -1,0 +1,172 @@
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+  background: radial-gradient(
+      ellipse 60% 50% at 70% 50%,
+      rgba(16, 185, 129, 0.05) 0%,
+      transparent 70%
+    ),
+    var(--bg);
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding-block: 60px;
+}
+
+/* Left content */
+.content {
+  flex: 1;
+  max-width: 520px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green-light);
+  color: #065f46;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+}
+
+.badgeIcon {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 20px;
+  font-style: normal;
+}
+
+.accent {
+  color: var(--green);
+  font-style: normal;
+}
+
+.subtitle {
+  font-size: 17px;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+.ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Right phones */
+.phones {
+  position: relative;
+  width: 340px;
+  height: 560px;
+  flex-shrink: 0;
+}
+
+.phoneWrapper1,
+.phoneWrapper2 {
+  position: absolute;
+  will-change: transform;
+}
+
+.phoneWrapper1 {
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.phoneWrapper2 {
+  top: 55px;
+  left: 84px;
+  z-index: 1;
+}
+
+.phone {
+  width: 240px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow-phone);
+  transition: transform 0.5s var(--ease);
+  background: linear-gradient(160deg, #1e3b36, #10b981);
+}
+
+.phone:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.phoneImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 48px;
+    padding-block: 48px;
+  }
+
+  .content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtitle {
+    margin-inline: auto;
+  }
+
+  .ctas {
+    justify-content: center;
+  }
+
+  .phones {
+    width: 280px;
+    height: 440px;
+  }
+
+  .phone {
+    width: 190px;
+  }
+
+  .phoneWrapper2 {
+    top: 44px;
+    left: 66px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phones {
+    width: 240px;
+    height: 380px;
+  }
+
+  .phone {
+    width: 160px;
+  }
+
+  .phoneWrapper2 {
+    top: 38px;
+    left: 56px;
+  }
+}
