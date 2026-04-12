@@ -22,6 +22,16 @@ export const metadata: Metadata = {
   title: "BloomWellness — Nutrition intelligente, pensée en français",
   description:
     "Coach IA, suivi calories CIQUAL, jeûne intermittent, recettes françaises. L'app nutrition créée par un développeur indépendant français.",
+  openGraph: {
+    title: "BloomWellness — Nutrition intelligente, pensée en français",
+    description:
+      "Coach IA, suivi calories CIQUAL, jeûne intermittent, recettes françaises. L'app nutrition créée par un développeur indépendant français.",
+    images: [{ url: "/images/brand/Bw-logo.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/brand/Bw-logo.png"],
+  },
 };
 
 export default function RootLayout({
