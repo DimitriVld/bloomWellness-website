@@ -52,7 +52,7 @@ export default function Story() {
           <p className={`${styles.para} body-text`}>
             Les apps existantes&nbsp;? Des traductions approximatives, des bases
             de données américaines, et des conseils génériques. Alors j&apos;ai
-            décidé de construire BloomWellness — l&apos;outil que j&apos;aurais
+            décidé de construire BloomWellness, l&apos;outil que j&apos;aurais
             voulu avoir dès le premier jour.
           </p>
         </motion.div>

@@ -20,7 +20,7 @@ const SLIDES = [
     label: "Intelligence artificielle",
     title: "Un coach qui te connaît vraiment.",
     description:
-      "Pose tes questions en langage naturel. Le coach analyse ton historique et tes objectifs pour te donner des conseils précis, personnalisés — pas des réponses génériques.",
+      "Pose tes questions en langage naturel. Le coach analyse ton historique et tes objectifs pour te donner des conseils précis, personnalisés, pas des réponses génériques.",
   },
   {
     src: "/images/screenshots/add-meal.png",
