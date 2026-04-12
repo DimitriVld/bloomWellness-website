@@ -13,8 +13,15 @@ export default function Contact() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = data.get("name") as string;
+    const email = data.get("email") as string;
+    const subject = data.get("subject") as string;
+    const message = data.get("message") as string;
+    const body = `Nom : ${name}\nEmail : ${email}\n\n${message}`;
+    window.location.href = `mailto:contact@bloomwellness.app?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (

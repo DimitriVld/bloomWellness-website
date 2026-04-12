@@ -4,8 +4,10 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader/SectionHeader";
 import Button from "@/components/ui/Button/Button";
-import { CheckIcon } from "@/components/ui/Icons";
+import { CheckIcon, XIcon } from "@/components/ui/Icons";
 import styles from "./Pricing.module.scss";
+
+type Feature = { label: string; locked?: boolean };
 
 const PLANS = [
   {
@@ -16,11 +18,11 @@ const PLANS = [
     featured: false,
     badge: null,
     features: [
-      "Suivi calories & macros",
-      "20 messages Coach IA / mois",
-      "Timer jeûne basique",
-      "Historique 7 jours",
-    ],
+      { label: "Suivi calories & macros" },
+      { label: "20 messages Coach IA / mois" },
+      { label: "Timer jeûne basique" },
+      { label: "Historique 7 jours" },
+    ] as Feature[],
     cta: null,
   },
   {
@@ -29,15 +31,14 @@ const PLANS = [
     period: "/an",
     note: "Tarif de lancement, pour toujours",
     featured: true,
-    badge: "Early Adopter",
+    badge: "Prix fondateur",
     features: [
-      "Tout illimité",
-      "Coach IA illimité",
-      "Scanner photo IA",
-      "Widgets iOS",
-      "Historique complet",
-      "Protocoles jeûne avancés",
-    ],
+      { label: "Tout illimité" },
+      { label: "Coach IA illimité" },
+      { label: "Scanner photo IA" },
+      { label: "Historique complet" },
+      { label: "Protocoles jeûne avancés" },
+    ] as Feature[],
     cta: "Choisir ce plan",
   },
   {
@@ -48,11 +49,12 @@ const PLANS = [
     featured: false,
     badge: null,
     features: [
-      "Tout illimité",
-      "Coach IA illimité",
-      "Scanner photo IA",
-      "Widgets iOS",
-    ],
+      { label: "Tout illimité" },
+      { label: "Coach IA illimité" },
+      { label: "Scanner photo IA" },
+      { label: "Historique complet" },
+      { label: "Protocoles jeûne avancés" },
+    ] as Feature[],
     cta: null,
   },
 ];
@@ -99,9 +101,16 @@ export default function Pricing() {
 
               <ul className={styles.featureList}>
                 {plan.features.map((feat) => (
-                  <li key={feat} className={styles.featureItem}>
-                    <CheckIcon size={15} className={styles.check} />
-                    <span>{feat}</span>
+                  <li
+                    key={feat.label}
+                    className={`${styles.featureItem} ${feat.locked ? styles.featureItemLocked : ""}`}
+                  >
+                    {feat.locked ? (
+                      <XIcon size={15} className={styles.cross} />
+                    ) : (
+                      <CheckIcon size={15} className={styles.check} />
+                    )}
+                    <span>{feat.label}</span>
                   </li>
                 ))}
               </ul>
