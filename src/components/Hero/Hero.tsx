@@ -52,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.2 }}
           >
             Coach IA personnalisé, suivi calories avec la base CIQUAL, jeûne
-            intermittent, recettes françaises — tout ce qu&apos;il te manquait,
+            intermittent, recettes françaises ! Tout ce qu&apos;il te manquait,
             dans une seule app.
           </motion.p>
 

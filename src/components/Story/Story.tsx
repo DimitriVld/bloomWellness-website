@@ -27,7 +27,6 @@ export default function Story() {
           transition={{ duration: 0.7, ease }}
         >
           <span className={`label ${styles.badgeWrap}`}>
-            <span className={styles.badge}>Indie Dev français</span>
             Mon histoire
           </span>
           <h2 className={styles.title}>
