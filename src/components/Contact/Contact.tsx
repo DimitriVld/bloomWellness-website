@@ -21,7 +21,7 @@ export default function Contact() {
     const subject = data.get("subject") as string;
     const message = data.get("message") as string;
     const body = `Nom : ${name}\nEmail : ${email}\n\n${message}`;
-    window.location.href = `mailto:contact@bloomwellness.app?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:contactbloomwellness@bloom-nutri.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -43,13 +43,13 @@ export default function Contact() {
 
           <div className={styles.links}>
             <a
-              href="mailto:contact@bloomwellness.app"
+              href="mailto:contactbloomwellness@bloom-nutri.com"
               className={styles.contactLink}
             >
               <span className={styles.linkIcon}>
                 <MailIcon size={18} />
               </span>
-              contact@bloomwellness.app
+              contactbloomwellness@bloom-nutri.com
             </a>
             <a
               href="https://instagram.com/bloomwellness.app"
