@@ -14,9 +14,9 @@ const COMMUNITY_LINKS = [
 ];
 
 const LEGAL_LINKS = [
-  { label: "CGU", href: "#" },
-  { label: "Confidentialité", href: "#" },
-  { label: "Mentions légales", href: "#" },
+  { label: "CGU", href: "/cgu" },
+  { label: "Confidentialité", href: "/confidentialite" },
+  { label: "Mentions légales", href: "/mentions-legales" },
 ];
 
 export default function Footer() {

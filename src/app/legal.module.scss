@@ -1,0 +1,86 @@
+.page {
+  padding: 120px 0 80px;
+  min-height: 100vh;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--green);
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.updated {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.content {
+  max-width: 720px;
+
+  h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 40px 0 12px;
+  }
+
+  p,
+  li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style: disc;
+    margin: 8px 0;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
