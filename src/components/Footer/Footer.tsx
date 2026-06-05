@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./Footer.module.scss";
 
 const APP_LINKS = [
-  { label: "Télécharger", href: "#pricing" },
+  { label: "Télécharger", href: "https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850", external: true },
   { label: "Fonctionnalités", href: "#features" },
   { label: "Tarifs", href: "#pricing" },
 ];
@@ -46,7 +46,11 @@ export default function Footer() {
             <ul>
               {APP_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className={styles.colLink}>
+                  <a
+                    href={link.href}
+                    className={styles.colLink}
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  >
                     {link.label}
                   </a>
                 </li>

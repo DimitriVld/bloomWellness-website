@@ -64,7 +64,8 @@ export default function Hero() {
           >
             <Button
               variant="primary"
-              href="#pricing"
+              href="https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850"
+              external
               icon={<AppleIcon size={18} />}
             >
               Télécharger sur l&apos;App Store

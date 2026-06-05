@@ -5,6 +5,7 @@ interface ButtonProps {
   size?: "default" | "sm";
   children: React.ReactNode;
   href?: string;
+  external?: boolean;
   fullWidth?: boolean;
   icon?: React.ReactNode;
   onClick?: () => void;
@@ -16,6 +17,7 @@ export default function Button({
   size = "default",
   children,
   href,
+  external,
   fullWidth,
   icon,
   onClick,
@@ -32,7 +34,11 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={className}>
+      <a
+        href={href}
+        className={className}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {icon && <span className={styles.icon}>{icon}</span>}
         {children}
       </a>

@@ -59,7 +59,7 @@ export default function Header() {
 
           {/* CTA */}
           <div className={styles.cta}>
-            <Button variant="primary" size="sm" href="#pricing">
+            <Button variant="primary" size="sm" href="https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850" external>
               Télécharger
             </Button>
           </div>
@@ -108,7 +108,7 @@ export default function Header() {
                 transition={{ delay: 0.36, duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 style={{ marginTop: "8px" }}
               >
-                <Button variant="primary" href="#pricing" fullWidth>
+                <Button variant="primary" href="https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850" external fullWidth>
                   Télécharger l&apos;app
                 </Button>
               </motion.div>

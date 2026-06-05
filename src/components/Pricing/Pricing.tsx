@@ -116,7 +116,7 @@ export default function Pricing() {
               </ul>
 
               {plan.cta && (
-                <Button variant="green" fullWidth href="#contact">
+                <Button variant="green" fullWidth href="https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850" external>
                   {plan.cta}
                 </Button>
               )}
