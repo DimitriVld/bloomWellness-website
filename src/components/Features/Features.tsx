@@ -10,6 +10,8 @@ import {
   ClockIcon,
   DropletIcon,
   UtensilsIcon,
+  HeartIcon,
+  MoonIcon,
 } from "@/components/ui/Icons";
 import styles from "./Features.module.scss";
 
@@ -20,7 +22,7 @@ const FEATURES = [
     iconColor: "var(--green)",
     title: "Coach Nutrition IA",
     description:
-      "Pose tes questions, reçois des conseils personnalisés basés sur tes objectifs et ton suivi du jour.",
+      "Ton coach français lit ton activité du jour et adapte ses conseils — pas un chatbot générique.",
   },
   {
     icon: CameraIcon,
@@ -61,6 +63,22 @@ const FEATURES = [
     title: "Recettes françaises",
     description:
       "Des recettes saines pensées pour nous, avec les produits qu'on trouve en France.",
+  },
+  {
+    icon: HeartIcon,
+    iconBg: "#fff1f2",
+    iconColor: "#e11d48",
+    title: "Synchronisé avec Apple Santé",
+    description:
+      "Ton activité, tes pas et ton poids remontent automatiquement. Ton budget calorique s'ajuste à ce que tu dépenses vraiment.",
+  },
+  {
+    icon: MoonIcon,
+    iconBg: "#ede9fe",
+    iconColor: "#6366f1",
+    title: "Suivi du cycle",
+    description:
+      "Besoins énergétiques, envies et énergie varient à chaque phase. Ton coach adapte ses conseils à ton cycle naturel.",
   },
 ];
 

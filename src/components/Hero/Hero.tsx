@@ -74,6 +74,20 @@ export default function Hero() {
               Découvrir l&apos;histoire
             </Button>
           </motion.div>
+
+          <motion.div
+            className={styles.trustLine}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease, delay: 0.4 }}
+          >
+            <AppleIcon size={13} className={styles.trustIcon} />
+            <span>Compatible Apple Santé &amp; Apple Watch</span>
+            <span className={styles.trustSep}>·</span>
+            <span>Base CIQUAL officielle</span>
+            <span className={styles.trustSep}>·</span>
+            <span>100&thinsp;% français</span>
+          </motion.div>
         </div>
 
         {/* Right — phones */}

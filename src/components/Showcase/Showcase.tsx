@@ -46,6 +46,15 @@ const SLIDES = [
     description:
       "Objectif personnalisé, rappels intelligents, suivi de tes différentes boissons. La bonne hydratation commence par en prendre conscience.",
   },
+  // PLACEHOLDER: décommenter et remplacer le src une fois le screenshot feature/apple-health disponible
+  // {
+  //   src: "/images/screenshots/activity.png",
+  //   alt: "Activité & poids — synchronisation Apple Santé",
+  //   label: "Apple Santé",
+  //   title: "Ton activité, ton vrai budget calorique.",
+  //   description:
+  //     "Les données de ton Apple Watch arrivent directement : pas, distance, calories actives. Ton coach les lit et adapte tes objectifs en temps réel.",
+  // },
 ];
 
 const INTERVAL = 4000;

@@ -137,6 +137,10 @@
     justify-content: center;
   }
 
+  .trustLine {
+    justify-content: center;
+  }
+
   .phones {
     width: 280px;
     height: 440px;
@@ -150,6 +154,26 @@
     top: 44px;
     left: 66px;
   }
+}
+
+.trustLine {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.trustIcon {
+  color: var(--text-mid);
+  flex-shrink: 0;
+}
+
+.trustSep {
+  opacity: 0.4;
 }
 
 @media (max-width: 480px) {

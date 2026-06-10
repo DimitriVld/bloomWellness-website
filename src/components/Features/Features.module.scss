@@ -4,6 +4,11 @@
   gap: 16px;
 }
 
+/* Center lone card in last row of 3-col grid */
+.grid > *:last-child:nth-child(3n + 1) {
+  grid-column: 2;
+}
+
 .card {
   background: var(--bg-card);
   border: 1px solid rgba(30, 59, 54, 0.05);
@@ -50,6 +55,13 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Center lone card in last row of 2-col grid */
+  .grid > *:last-child:nth-child(2n + 1) {
+    grid-column: span 2;
+    max-width: 360px;
+    margin-inline: auto;
   }
 }
 
