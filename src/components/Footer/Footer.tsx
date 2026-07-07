@@ -17,6 +17,7 @@ const LEGAL_LINKS = [
   { label: "CGU", href: "/cgu" },
   { label: "Confidentialité", href: "/confidentialite" },
   { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Supprimer mon compte", href: "/supprimer-mon-compte" },
 ];
 
 export default function Footer() {
