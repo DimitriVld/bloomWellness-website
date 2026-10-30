@@ -1,12 +1,12 @@
 /* Le cadre suit le ratio réel de la capture : écran entier, sans zoom ni rognage. */
 .phone {
   flex: none;
-  width: 190px;
+  width: 165px;
   max-width: 100%;
   height: fit-content;
-  border-radius: 34px;
+  border-radius: 30px;
   background: #0a0e0d;
-  padding: 7px;
+  padding: 6px;
   box-shadow: 0 30px 70px rgba(30, 59, 54, 0.28),
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.16);
 }
@@ -14,5 +14,5 @@
 .screen {
   width: 100%;
   height: auto;
-  border-radius: 27px;
+  border-radius: 24px;
 }

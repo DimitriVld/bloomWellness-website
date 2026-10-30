@@ -49,7 +49,7 @@ export default function Features() {
               de l’assiette avec Bloom Pro.
             </p>
             <div className={styles.shot}>
-              <PhoneFrame screen="recherche" alt="Résultats de recherche pour poulet" sizes="190px" />
+              <PhoneFrame screen="recherche" alt="Résultats de recherche pour poulet" sizes="165px" />
             </div>
           </article>
           <article className={`${styles.card} ${styles.big} ${styles.dark}`}>
@@ -60,7 +60,7 @@ export default function Features() {
               et le bon moment pour ajouter du poids.
             </p>
             <div className={styles.shot}>
-              <PhoneFrame screen="seance" alt="Séance en cours" sizes="190px" />
+              <PhoneFrame screen="seance" alt="Séance en cours" sizes="165px" />
             </div>
           </article>
           {SMALL_CARDS.map((card) => (

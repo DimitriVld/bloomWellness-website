@@ -45,22 +45,22 @@
   justify-content: center;
   align-items: flex-start;
   margin-top: 64px;
-  height: 345px;
+  height: 300px;
   overflow: hidden;
 }
 
 .center {
   position: relative;
   z-index: 2;
-  width: 215px;
+  width: 185px;
 }
 
 .left {
-  transform: translate(42px, 50px) rotate(-8deg);
+  transform: translate(36px, 44px) rotate(-8deg);
 }
 
 .right {
-  transform: translate(-42px, 50px) rotate(8deg);
+  transform: translate(-36px, 44px) rotate(8deg);
 }
 
 @media (max-width: 720px) {
@@ -69,11 +69,11 @@
   }
 
   .fan {
-    height: 260px;
+    height: 230px;
   }
 
   .center {
-    width: 150px;
+    width: 130px;
   }
 
   .side {
