@@ -4,10 +4,10 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 
+// Police variable : un seul fichier couvre les graisses 400 à 800.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Bloom",
-    url: "/",
     title: TITLE,
     description: DESCRIPTION,
     images: [{ url: SHARE_IMAGE }],
