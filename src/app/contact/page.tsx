@@ -8,7 +8,7 @@ import styles from "./contact.module.scss";
 export const metadata: Metadata = {
   title: "Contact · Bloom",
   description:
-    "Une question, un bug, une idée ? Écris directement au créateur de Bloom, il répond à chaque message.",
+    "Une question, un bug, une idée ? Écris directement au créateur de Bloom, il répond à chaque message.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
         <p className="eyebrow">Contact</p>
         <h1 className={styles.title}>Écris-moi, je réponds à chaque message.</h1>
         <p className={styles.lead}>
-          Une question, un bug ou une idée pour Bloom ? C’est moi, Dimitri, qui
+          Une question, un bug ou une idée pour Bloom ? C’est moi, Dimitri, qui
           lis et réponds, pas un robot.
         </p>
       </header>
@@ -70,7 +70,7 @@ export default function ContactPage() {
               <div>
                 <dt>Gérer ou annuler Bloom Pro</dt>
                 <dd>
-                  Sur ton iPhone : Réglages, puis ton nom, puis Abonnements.
+                  Sur ton iPhone : Réglages, puis ton nom, puis Abonnements.
                 </dd>
               </div>
               <div>

@@ -90,7 +90,8 @@ h3 {
 }
 
 /* ===== UTILITIES ===== */
-.container {
+/* :where() = spécificité nulle, les modules CSS gardent toujours la main */
+:where(.container) {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -98,7 +99,7 @@ h3 {
 }
 
 @media (max-width: 720px) {
-  .container {
+  :where(.container) {
     padding: 0 20px;
   }
 }
@@ -109,13 +110,13 @@ h3 {
 }
 
 /* Titres de section */
-.h2 {
+:where(.h2) {
   font-size: 52px;
   line-height: 1.05;
   letter-spacing: -0.035em;
 }
 
-.eyebrow {
+:where(.eyebrow) {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -124,13 +125,13 @@ h3 {
 }
 
 @media (max-width: 720px) {
-  .h2 {
+  :where(.h2) {
     font-size: 34px;
   }
 }
 
 /* Surlignage lime sous le texte */
-.mark {
+:where(.mark) {
   background: linear-gradient(
     transparent 58%,
     var(--lime) 58%,

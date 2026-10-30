@@ -23,7 +23,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <fieldset className={styles.topics}>
-        <legend className={styles.label}>C’est à quel sujet ?</legend>
+        <legend className={styles.label}>C’est à quel sujet ?</legend>
         <div className={styles.chips}>
           {TOPICS.map((topic, i) => (
             <label key={topic} className={styles.chip}>

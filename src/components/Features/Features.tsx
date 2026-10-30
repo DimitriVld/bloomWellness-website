@@ -4,11 +4,11 @@ import styles from "./Features.module.scss";
 const SMALL_CARDS = [
   {
     title: "Un programme qui suit ta vie",
-    text: "Séance libre ou footing imprévu : la suite s’adapte, sans culpabiliser.",
+    text: "Séance libre ou footing imprévu : la suite s’adapte, sans culpabiliser.",
     tone: styles.mint,
   },
   {
-    title: "Un oubli ? On complète le soir",
+    title: "Un oubli ? On complète le soir",
     text: "Un seul rappel, seulement si tu n’as pas ouvert l’app.",
     tone: styles.lime,
   },

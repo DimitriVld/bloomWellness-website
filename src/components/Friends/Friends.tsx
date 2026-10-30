@@ -11,7 +11,7 @@ export default function Friends() {
             <h2 className={`h2 ${styles.title}`}>Plus motivant à plusieurs.</h2>
             <p className={styles.text}>
               Partage tes séances, envoie des bravos, lancez un défi. Pas de
-              poids, pas de calories : juste l’effort.
+              poids, pas de calories : juste l’effort.
             </p>
           </div>
           <div className={styles.visual}>
