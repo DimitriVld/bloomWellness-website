@@ -1,0 +1,146 @@
+.page {
+  padding-top: 64px;
+  padding-bottom: 120px;
+}
+
+.header {
+  max-width: 760px;
+}
+
+.title {
+  margin-top: 12px;
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.lead {
+  margin-top: 20px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.formCard {
+  padding: 36px;
+  border-radius: 32px;
+  background: var(--card);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.block {
+  padding: 32px;
+  border-radius: 32px;
+  background: var(--card);
+}
+
+.quick {
+  background: var(--mint);
+}
+
+.blockTitle {
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.channels {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--link);
+
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+.channelIcon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--forest);
+  color: var(--lime);
+}
+
+.channelText {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.answers {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  dt {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  dd {
+    margin-top: 4px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-2);
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--link-hover);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .formCard,
+  .block {
+    padding: 28px 20px;
+  }
+}

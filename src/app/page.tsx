@@ -1,23 +1,30 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero/Hero";
-import Story from "@/components/Story/Story";
+import SourcesStrip from "@/components/SourcesStrip/SourcesStrip";
 import Features from "@/components/Features/Features";
-import IntegrationsStrip from "@/components/Integrations/IntegrationsStrip";
-import Showcase from "@/components/Showcase/Showcase";
+import Friends from "@/components/Friends/Friends";
+import Founder from "@/components/Founder/Founder";
 import Pricing from "@/components/Pricing/Pricing";
-import Contact from "@/components/Contact/Contact";
-import Footer from "@/components/Footer/Footer";
+import Faq from "@/components/Faq/Faq";
+import FinalCta from "@/components/FinalCta/FinalCta";
+import LegacyAnchors from "@/components/LegacyAnchors/LegacyAnchors";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
     <>
+      <LegacyAnchors />
       <Hero />
-      <Story />
+      <SourcesStrip />
       <Features />
-      <IntegrationsStrip />
-      <Showcase />
+      <Friends />
+      <Founder />
       <Pricing />
-      <Contact />
-      <Footer />
+      <Faq />
+      <FinalCta />
     </>
   );
 }

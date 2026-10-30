@@ -1,0 +1,30 @@
+.final {
+  padding: 0 0 120px;
+}
+
+.panel {
+  padding: 80px 32px;
+  border-radius: 40px;
+  background: var(--lime);
+  text-align: center;
+}
+
+.title {
+  font-size: 60px;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.cta {
+  margin-top: 32px;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    padding: 56px 20px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}

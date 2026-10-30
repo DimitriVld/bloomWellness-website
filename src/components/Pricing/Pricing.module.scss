@@ -1,119 +1,115 @@
-.grid {
+.pricing {
+  padding: 120px 0;
+  background: var(--sand);
+}
+
+.title {
+  text-align: center;
+}
+
+.lead {
+  margin: 16px auto 0;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--text-2);
+}
+
+.plans {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  align-items: start;
+  max-width: 920px;
+  margin: 56px auto 0;
 }
 
-.card {
-  background: var(--bg-card);
-  border: 1px solid rgba(30, 59, 54, 0.08);
-  border-radius: var(--radius);
-  padding: 32px;
-  position: relative;
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px;
+  border-radius: 32px;
+  background: var(--cream);
 }
 
-.card.featured {
-  border: 2px solid var(--green);
-  box-shadow: var(--shadow-md);
+.pro {
+  background: var(--forest);
+  color: #fff;
+
+  .list {
+    color: rgba(255, 255, 255, 0.88);
+  }
 }
 
-.badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: var(--lime);
-  color: var(--text);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+.proHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .planName {
-  font-size: 13px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.price {
+  margin-top: 8px;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.proPrice {
+  margin-top: 0;
+  color: var(--lime);
+}
+
+.period {
+  font-size: 18px;
   font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 16px;
-}
-
-.priceRow {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  margin-bottom: 6px;
-}
-
-.priceAmount {
-  font-family: var(--font-playfair), serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--text);
-}
-
-.pricePeriod {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 3px;
+  letter-spacing: 0;
+  color: #fff;
 }
 
 .priceNote {
+  margin-top: 4px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--lime);
+  color: var(--text);
   font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 24px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.divider {
-  height: 1px;
-  background: rgba(30, 59, 54, 0.07);
-  margin-bottom: 20px;
-}
-
-.featureList {
+.list {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 28px;
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--text-2);
 }
 
-.featureItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.5;
+.cta {
+  margin-top: auto;
 }
 
-.check {
-  color: var(--green);
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.featureItemLocked {
-  opacity: 0.35;
-}
-
-.cross {
-  color: var(--text-muted);
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin-inline: auto;
+@media (max-width: 720px) {
+  .plans {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .card.featured {
-    order: -1;
+  .plan {
+    padding: 28px 24px;
   }
 }

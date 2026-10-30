@@ -1,135 +1,58 @@
-"use client";
-
-import { useRef } from "react";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
-import { AppleIcon, CheckIcon } from "@/components/ui/Icons";
+import PhoneFrame from "@/components/ui/PhoneFrame/PhoneFrame";
+import { DownloadIcon } from "@/components/ui/Icons";
+import { APP_STORE_URL } from "@/lib/site";
 import styles from "./Hero.module.scss";
 
-const ease = [0.23, 1, 0.32, 1] as const;
-
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const phone1Y = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const phone2Y = useTransform(scrollYProgress, [0, 1], [0, -60]);
-
   return (
-    <section ref={sectionRef} className={styles.hero} id="hero">
-      <div className={`container ${styles.inner}`}>
-        {/* Left — content */}
-        <div className={styles.content}>
-          <motion.div
-            className={styles.badge}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
+    <section id="top" className={styles.hero}>
+      {/* Ancienne ancre conservée pour les liens existants */}
+      <span id="hero" aria-hidden="true" />
+      <div className="container">
+        <p className={styles.tagline}>L’app française nutrition + sport</p>
+        <h1 className={styles.title}>
+          Mange mieux. Bouge plus. <span className="mark">Une seule app.</span>
+        </h1>
+        <p className={styles.lead}>
+          Tes repas, ton programme muscu et tes amis réunis dans Bloom. Chaque
+          séance ajuste ton objectif du jour.
+        </p>
+        <div className={styles.actions}>
+          <Button
+            variant="dark"
+            size="lg"
+            href={APP_STORE_URL}
+            external
+            icon={<DownloadIcon className={styles.downloadIcon} />}
           >
-            <CheckIcon size={14} className={styles.badgeIcon} />
-            Pensée par un utilisateur, pour les utilisateurs
-          </motion.div>
-
-          <motion.h1
-            className={styles.title}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease, delay: 0.1 }}
-          >
-            Ta nutrition,
-            <br />
-            <em className={styles.accent}>enfin</em> bien conseillée.
-          </motion.h1>
-
-          <motion.p
-            className={`${styles.subtitle} body-text`}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease, delay: 0.2 }}
-          >
-            Coach IA personnalisé, suivi calories avec la base CIQUAL, jeûne
-            intermittent, recettes françaises ! Tout ce qu&apos;il te manquait,
-            dans une seule app.
-          </motion.p>
-
-          <motion.div
-            className={styles.ctas}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease, delay: 0.3 }}
-          >
-            <Button
-              variant="primary"
-              href="https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850"
-              external
-              icon={<AppleIcon size={18} />}
-            >
-              Télécharger sur l&apos;App Store
-            </Button>
-            <Button variant="outline" href="#story">
-              Découvrir l&apos;histoire
-            </Button>
-          </motion.div>
-
-          <motion.div
-            className={styles.trustLine}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease, delay: 0.4 }}
-          >
-            <AppleIcon size={13} className={styles.trustIcon} />
-            <span>Compatible Apple Santé &amp; Apple Watch</span>
-            <span className={styles.trustSep}>·</span>
-            <span>Base CIQUAL officielle</span>
-            <span className={styles.trustSep}>·</span>
-            <span>100&thinsp;% français</span>
-          </motion.div>
+            Télécharger sur l’App Store
+          </Button>
+          <Button variant="outline" size="lg" href="#tarifs">
+            Essai gratuit 14 jours
+          </Button>
         </div>
-
-        {/* Right — phones */}
-        <motion.div
-          className={styles.phones}
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease, delay: 0.4 }}
-          aria-hidden="true"
-        >
-          <motion.div
-            className={styles.phoneWrapper1}
-            style={{ y: phone1Y }}
-          >
-            <div className={styles.phone}>
-              <Image
-                src="/images/screenshots/dashboard.png"
-                alt="Tableau de bord BloomWellness"
-                width={240}
-                height={480}
-                className={styles.phoneImg}
-                priority
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            className={styles.phoneWrapper2}
-            style={{ y: phone2Y }}
-          >
-            <div className={styles.phone}>
-              <Image
-                src="/images/screenshots/coach.png"
-                alt="Coach Nutrition IA"
-                width={240}
-                height={480}
-                className={styles.phoneImg}
-                priority
-              />
-            </div>
-          </motion.div>
-        </motion.div>
+        <div className={styles.fan}>
+          <PhoneFrame
+            screen="recherche"
+            alt="Recherche d’un aliment"
+            className={`${styles.side} ${styles.left}`}
+            sizes="260px"
+          />
+          <PhoneFrame
+            screen="home"
+            alt="Accueil de Bloom avec les calories restantes"
+            className={styles.center}
+            sizes="(max-width: 720px) 180px, 290px"
+            eager
+          />
+          <PhoneFrame
+            screen="seance"
+            alt="Séance guidée"
+            className={`${styles.side} ${styles.right}`}
+            sizes="260px"
+          />
+        </div>
       </div>
     </section>
   );

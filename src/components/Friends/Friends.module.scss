@@ -1,0 +1,65 @@
+.friends {
+  padding: 0 0 120px;
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 48px;
+  padding: 64px 56px 0;
+  border-radius: 40px;
+  background: var(--forest);
+  color: #fff;
+  overflow: hidden;
+}
+
+.copy {
+  flex: 1 1 380px;
+  min-width: 0;
+  padding-bottom: 64px;
+}
+
+.eyebrow {
+  color: var(--lime);
+}
+
+.title {
+  margin-top: 12px;
+  line-height: 1.04;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.visual {
+  flex: 1 1 300px;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  height: 440px;
+  overflow: hidden;
+}
+
+.phone {
+  width: 290px;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    gap: 0;
+    padding: 48px 24px 0;
+  }
+
+  .copy {
+    padding-bottom: 40px;
+  }
+
+  .visual {
+    height: 360px;
+  }
+}

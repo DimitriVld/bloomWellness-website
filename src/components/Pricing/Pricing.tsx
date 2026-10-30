@@ -1,127 +1,75 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import SectionHeader from "@/components/ui/SectionHeader/SectionHeader";
 import Button from "@/components/ui/Button/Button";
-import { CheckIcon, XIcon } from "@/components/ui/Icons";
+import { APP_STORE_URL } from "@/lib/site";
 import styles from "./Pricing.module.scss";
 
-type Feature = { label: string; locked?: boolean };
-
-const PLANS = [
-  {
-    name: "Gratuit",
-    price: "0€",
-    period: "",
-    note: "Pour découvrir",
-    featured: false,
-    badge: null,
-    features: [
-      { label: "Suivi calories & macros" },
-      { label: "20 messages Coach IA / mois" },
-      { label: "Timer jeûne basique" },
-      { label: "Historique 7 jours" },
-    ] as Feature[],
-    cta: null,
-  },
-  {
-    name: "Annuel Fondateur",
-    price: "19,99€",
-    period: "/an",
-    note: "Tarif de lancement, pour toujours",
-    featured: true,
-    badge: "Prix fondateur",
-    features: [
-      { label: "Tout illimité" },
-      { label: "Coach IA illimité" },
-      { label: "Scanner photo IA" },
-      { label: "Historique complet" },
-      { label: "Protocoles jeûne avancés" },
-    ] as Feature[],
-    cta: "Choisir ce plan",
-  },
-  {
-    name: "Mensuel",
-    price: "3,99€",
-    period: "/mois",
-    note: "Sans engagement",
-    featured: false,
-    badge: null,
-    features: [
-      { label: "Tout illimité" },
-      { label: "Coach IA illimité" },
-      { label: "Scanner photo IA" },
-      { label: "Historique complet" },
-      { label: "Protocoles jeûne avancés" },
-    ] as Feature[],
-    cta: null,
-  },
+const FREE_FEATURES = [
+  "Calories, macros, eau et poids",
+  "Recherche et scan du code-barres",
+  "Séance libre, historique et records",
+  "Amis, bravos et défis à rejoindre",
+  "20 messages au coach IA par mois",
 ];
 
-const ease = [0.23, 1, 0.32, 1] as const;
+const PRO_FEATURES = [
+  "Coach IA illimité, nutrition et sport",
+  "Programme sport et séances à la demande",
+  "Scanner photo des repas",
+  "Progression et historique illimités",
+  "Jeûne avancé, bilan de la semaine, créer des défis",
+];
 
 export default function Pricing() {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(gridRef, { once: true, margin: "-10%" });
-
   return (
-    <section id="pricing" className="section">
+    <section id="tarifs" className={styles.pricing}>
+      {/* Ancienne ancre conservée pour les liens existants */}
+      <span id="pricing" aria-hidden="true" />
       <div className="container">
-        <SectionHeader
-          label="Tarifs"
-          title="Commence gratuitement."
-          subtitle="L'essentiel est gratuit. Passe en Premium pour tout débloquer."
-        />
-
-        <div ref={gridRef} className={styles.grid}>
-          {PLANS.map((plan, i) => (
-            <motion.div
-              key={plan.name}
-              className={`${styles.card} ${plan.featured ? styles.featured : ""}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease, delay: i * 0.1 }}
-            >
-              {plan.badge && (
-                <span className={styles.badge}>{plan.badge}</span>
-              )}
-
-              <p className={styles.planName}>{plan.name}</p>
-
-              <div className={styles.priceRow}>
-                <span className={styles.priceAmount}>{plan.price}</span>
-                {plan.period && (
-                  <span className={styles.pricePeriod}>{plan.period}</span>
-                )}
-              </div>
-              <p className={styles.priceNote}>{plan.note}</p>
-
-              <div className={styles.divider} />
-
-              <ul className={styles.featureList}>
-                {plan.features.map((feat) => (
-                  <li
-                    key={feat.label}
-                    className={`${styles.featureItem} ${feat.locked ? styles.featureItemLocked : ""}`}
-                  >
-                    {feat.locked ? (
-                      <XIcon size={15} className={styles.cross} />
-                    ) : (
-                      <CheckIcon size={15} className={styles.check} />
-                    )}
-                    <span>{feat.label}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {plan.cta && (
-                <Button variant="green" fullWidth href="https://apps.apple.com/fr/app/bloom-calories-coach-ia/id6758521850" external>
-                  {plan.cta}
-                </Button>
-              )}
-            </motion.div>
-          ))}
+        <h2 className={`h2 ${styles.title}`}>Gratuit pour commencer.</h2>
+        <p className={styles.lead}>
+          Bloom Pro quand tu veux, avec 14 jours d’essai. Annulable en 2 clics
+          dans les réglages de ton iPhone.
+        </p>
+        <div className={styles.plans}>
+          <article className={styles.plan}>
+            <div>
+              <h3 className={styles.planName}>Gratuit</h3>
+              <p className={styles.price}>0 €</p>
+            </div>
+            <ul className={styles.list}>
+              {FREE_FEATURES.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+            <div className={styles.cta}>
+              <Button variant="outline" href={APP_STORE_URL} external fullWidth>
+                Télécharger Bloom
+              </Button>
+            </div>
+          </article>
+          <article className={`${styles.plan} ${styles.pro}`}>
+            <div className={styles.proHead}>
+              <h3 className={styles.planName}>Bloom Pro</h3>
+              <span className={styles.badge}>14 jours offerts</span>
+            </div>
+            <div>
+              <p className={`${styles.price} ${styles.proPrice}`}>
+                39,99 €<span className={styles.period}> / an</span>
+              </p>
+              <p className={styles.priceNote}>
+                Soit 3,33 € par mois. Ou 6,99 € par mois, sans engagement.
+              </p>
+            </div>
+            <ul className={styles.list}>
+              {PRO_FEATURES.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+            <div className={styles.cta}>
+              <Button variant="lime" href={APP_STORE_URL} external fullWidth>
+                Commencer mes 14 jours gratuits
+              </Button>
+            </div>
+          </article>
         </div>
       </div>
     </section>

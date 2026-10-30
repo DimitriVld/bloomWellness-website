@@ -1,0 +1,19 @@
+.strip {
+  background: var(--forest);
+  color: #fff;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 40px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sep {
+  color: var(--lime);
+}

@@ -1,122 +1,77 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import SectionHeader from "@/components/ui/SectionHeader/SectionHeader";
-import {
-  MessageCircleIcon,
-  CameraIcon,
-  BarChartIcon,
-  ClockIcon,
-  DropletIcon,
-  UtensilsIcon,
-  HeartIcon,
-  MoonIcon,
-} from "@/components/ui/Icons";
+import PhoneFrame from "@/components/ui/PhoneFrame/PhoneFrame";
 import styles from "./Features.module.scss";
 
-const FEATURES = [
+const SMALL_CARDS = [
   {
-    icon: MessageCircleIcon,
-    iconBg: "var(--green-light)",
-    iconColor: "var(--green)",
-    title: "Coach Nutrition IA",
-    description:
-      "Ton coach français lit ton activité du jour et adapte ses conseils — pas un chatbot générique.",
+    title: "Un programme qui suit ta vie",
+    text: "Séance libre ou footing imprévu : la suite s’adapte, sans culpabiliser.",
+    tone: styles.mint,
   },
   {
-    icon: CameraIcon,
-    iconBg: "#fef3e2",
-    iconColor: "#d97706",
-    title: "Scanner photo IA",
-    description:
-      "Prends ton repas en photo. L'IA analyse et enregistre automatiquement les calories et macros.",
+    title: "Un oubli ? On complète le soir",
+    text: "Un seul rappel, seulement si tu n’as pas ouvert l’app.",
+    tone: styles.lime,
   },
   {
-    icon: BarChartIcon,
-    iconBg: "#fce7f3",
-    iconColor: "#db2777",
-    title: "Suivi calories & macros",
-    description:
-      "Base de données CIQUAL + 2M de produits. Recherche, scan code-barres, saisie manuelle.",
+    title: "Des recettes à ta mesure",
+    text: "Selon ce qu’il te reste, ton régime et tes allergènes.",
   },
   {
-    icon: ClockIcon,
-    iconBg: "#e0f2fe",
-    iconColor: "#0284c7",
-    title: "Jeûne intermittent",
-    description:
-      "4 protocoles (16:8, 18:6, 20:4, 14:10), timer visuel, historique et statistiques.",
+    title: "Coach IA",
+    text: "Tes questions sur ta journée, et un bilan chaque semaine.",
   },
   {
-    icon: DropletIcon,
-    iconBg: "#dbeafe",
-    iconColor: "#3b82f6",
-    title: "Hydratation",
-    description:
-      "Suivi de ta consommation d'eau avec objectif personnalisé et rappels intelligents.",
+    title: "Eau, jeûne et cycle",
+    text: "Un verre en un tap, un timer de jeûne, des objectifs selon ta phase.",
   },
   {
-    icon: UtensilsIcon,
-    iconBg: "var(--green-50)",
-    iconColor: "var(--green)",
-    title: "Recettes françaises",
-    description:
-      "Des recettes saines pensées pour nous, avec les produits qu'on trouve en France.",
-  },
-  {
-    icon: HeartIcon,
-    iconBg: "#fff1f2",
-    iconColor: "#e11d48",
-    title: "Synchronisé avec Apple Santé",
-    description:
-      "Ton activité, tes pas et ton poids remontent automatiquement. Ton budget calorique s'ajuste à ce que tu dépenses vraiment.",
-  },
-  {
-    icon: MoonIcon,
-    iconBg: "#ede9fe",
-    iconColor: "#6366f1",
-    title: "Suivi du cycle",
-    description:
-      "Besoins énergétiques, envies et énergie varient à chaque phase. Ton coach adapte ses conseils à ton cycle naturel.",
+    title: "Widgets et Apple Santé",
+    text: "Ta journée sur l’écran d’accueil, tes pas et séances synchronisés.",
   },
 ];
 
-const ease = [0.23, 1, 0.32, 1] as const;
-
 export default function Features() {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(gridRef, { once: true, margin: "-10%" });
-
   return (
-    <section id="features" className="section">
+    <section id="fonctions" className={styles.features}>
+      {/* Anciennes ancres conservées pour les liens existants */}
+      <span id="features" aria-hidden="true" />
+      <span id="showcase" aria-hidden="true" />
       <div className="container">
-        <SectionHeader label="Fonctionnalités" title="Tout ce dont tu as besoin." />
-
-        <div ref={gridRef} className={styles.grid}>
-          {FEATURES.map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                className={styles.card}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease, delay: i * 0.08 }}
-              >
-                <div
-                  className={styles.iconWrap}
-                  style={{ background: feature.iconBg }}
-                >
-                  <span style={{ color: feature.iconColor } as React.CSSProperties} className={styles.icon}>
-                    <Icon size={22} />
-                  </span>
-                </div>
-                <h3 className={styles.cardTitle}>{feature.title}</h3>
-                <p className={styles.cardDesc}>{feature.description}</p>
-              </motion.div>
-            );
-          })}
+        <h2 className={`h2 ${styles.title}`}>
+          Tout ce qu’il faut, rien de ce qui fatigue.
+        </h2>
+        <div className={styles.bento}>
+          <article className={`${styles.card} ${styles.big}`}>
+            <p className="eyebrow">Repas</p>
+            <h3 className={styles.bigTitle}>Note tes repas sans effort</h3>
+            <p className={styles.bigText}>
+              Recherche CIQUAL et Open Food Facts, scan du code-barres ou photo
+              de l’assiette avec Bloom Pro.
+            </p>
+            <div className={styles.shot}>
+              <PhoneFrame screen="recherche" alt="Résultats de recherche pour poulet" sizes="260px" />
+            </div>
+          </article>
+          <article className={`${styles.card} ${styles.big} ${styles.dark}`}>
+            <p className={`eyebrow ${styles.eyebrowLime}`}>Sport</p>
+            <h3 className={styles.bigTitle}>Ton coach muscu dans la poche</h3>
+            <p className={styles.bigText}>
+              Programme selon ton matériel et ton temps, séries et repos guidés,
+              et le bon moment pour ajouter du poids.
+            </p>
+            <div className={styles.shot}>
+              <PhoneFrame screen="seance" alt="Séance en cours" sizes="260px" />
+            </div>
+          </article>
+          {SMALL_CARDS.map((card) => (
+            <article
+              key={card.title}
+              className={[styles.card, styles.small, card.tone].filter(Boolean).join(" ")}
+            >
+              <h3 className={styles.smallTitle}>{card.title}</h3>
+              <p className={styles.smallText}>{card.text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -1,8 +1,9 @@
+import Link from "next/link";
 import styles from "./Button.module.scss";
 
 interface ButtonProps {
-  variant: "primary" | "outline" | "green";
-  size?: "default" | "sm";
+  variant: "dark" | "outline" | "lime";
+  size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   href?: string;
   external?: boolean;
@@ -14,7 +15,7 @@ interface ButtonProps {
 
 export default function Button({
   variant,
-  size = "default",
+  size = "md",
   children,
   href,
   external,
@@ -26,29 +27,38 @@ export default function Button({
   const className = [
     styles.btn,
     styles[variant],
-    size === "sm" ? styles.sm : "",
+    styles[size],
     fullWidth ? styles.fullWidth : "",
   ]
     .filter(Boolean)
     .join(" ");
 
+  const content = (
+    <>
+      {icon && <span className={styles.icon}>{icon}</span>}
+      {children}
+    </>
+  );
+
+  if (href && external) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    );
+  }
+
   if (href) {
     return (
-      <a
-        href={href}
-        className={className}
-        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      >
-        {icon && <span className={styles.icon}>{icon}</span>}
-        {children}
-      </a>
+      <Link href={href} className={className}>
+        {content}
+      </Link>
     );
   }
 
   return (
     <button type={type} className={className} onClick={onClick}>
-      {icon && <span className={styles.icon}>{icon}</span>}
-      {children}
+      {content}
     </button>
   );
 }
