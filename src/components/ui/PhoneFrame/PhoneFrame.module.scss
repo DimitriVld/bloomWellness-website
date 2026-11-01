@@ -1,12 +1,12 @@
 /* Le cadre suit le ratio réel de la capture : écran entier, sans zoom ni rognage. */
 .phone {
   flex: none;
-  width: 165px;
+  width: 240px;
   max-width: 100%;
   height: fit-content;
-  border-radius: 30px;
+  border-radius: 40px;
   background: #0a0e0d;
-  padding: 6px;
+  padding: 8px;
   box-shadow: 0 30px 70px rgba(30, 59, 54, 0.28),
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.16);
 }
@@ -14,5 +14,12 @@
 .screen {
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 32px;
+}
+
+/* Tailles reprises de l'ancien site : 240 px, 200 px sur mobile */
+@media (max-width: 720px) {
+  .phone {
+    width: 200px;
+  }
 }

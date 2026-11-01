@@ -15,7 +15,7 @@ export default function Friends() {
             </p>
           </div>
           <div className={styles.visual}>
-            <PhoneFrame screen="amis" alt="Fil des amis" className={styles.phone} sizes="175px" />
+            <PhoneFrame screen="amis" alt="Fil des amis" sizes="240px" />
           </div>
         </div>
       </div>

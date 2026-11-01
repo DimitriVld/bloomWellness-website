@@ -37,20 +37,20 @@ export default function Hero() {
             screen="recherche"
             alt="Recherche d’un aliment"
             className={`${styles.side} ${styles.left}`}
-            sizes="165px"
+            sizes="240px"
           />
           <PhoneFrame
             screen="home"
             alt="Accueil de Bloom avec les calories restantes"
             className={styles.center}
-            sizes="(max-width: 720px) 130px, 185px"
+            sizes="(max-width: 720px) 160px, 240px"
             eager
           />
           <PhoneFrame
             screen="seance"
             alt="Séance guidée"
             className={`${styles.side} ${styles.right}`}
-            sizes="165px"
+            sizes="240px"
           />
         </div>
       </div>

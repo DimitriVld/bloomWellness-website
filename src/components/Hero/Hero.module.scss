@@ -45,22 +45,22 @@
   justify-content: center;
   align-items: flex-start;
   margin-top: 64px;
-  height: 300px;
+  height: 420px;
   overflow: hidden;
 }
 
-.center {
+.fan .center {
   position: relative;
   z-index: 2;
-  width: 185px;
+  width: 240px;
 }
 
 .left {
-  transform: translate(36px, 44px) rotate(-8deg);
+  transform: translate(50px, 60px) rotate(-8deg);
 }
 
 .right {
-  transform: translate(-36px, 44px) rotate(8deg);
+  transform: translate(-50px, 60px) rotate(8deg);
 }
 
 @media (max-width: 720px) {
@@ -69,14 +69,14 @@
   }
 
   .fan {
-    height: 230px;
+    height: 260px;
   }
 
-  .center {
-    width: 130px;
+  .fan .center {
+    width: 160px;
   }
 
-  .side {
+  .fan .side {
     display: none;
   }
 }

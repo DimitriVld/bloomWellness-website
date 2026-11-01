@@ -41,12 +41,8 @@
   min-width: 0;
   display: flex;
   justify-content: center;
-  height: 285px;
+  height: 440px;
   overflow: hidden;
-}
-
-.phone {
-  width: 175px;
 }
 
 @media (max-width: 720px) {
@@ -60,6 +56,6 @@
   }
 
   .visual {
-    height: 255px;
+    height: 340px;
   }
 }
