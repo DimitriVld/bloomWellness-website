@@ -11,9 +11,13 @@
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.16);
 }
 
+/* Même hauteur pour tous les écrans, calée sur les captures les plus hautes */
 .screen {
   width: 100%;
   height: auto;
+  aspect-ratio: 600 / 1131;
+  object-fit: cover;
+  object-position: top;
   border-radius: 32px;
 }
 
