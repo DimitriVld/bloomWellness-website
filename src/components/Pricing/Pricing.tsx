@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button/Button";
 import { APP_STORE_URL } from "@/lib/site";
 import styles from "./Pricing.module.scss";
+import { reveal } from "@/lib/reveal";
 
 const FREE_FEATURES = [
   "Calories, macros, eau et poids",
@@ -24,13 +25,13 @@ export default function Pricing() {
       {/* Ancienne ancre conservée pour les liens existants */}
       <span id="pricing" aria-hidden="true" />
       <div className="container">
-        <h2 className={`h2 ${styles.title}`}>Gratuit pour commencer.</h2>
-        <p className={styles.lead}>
+        <h2 className={`h2 ${styles.title}`} {...reveal()}>Gratuit pour commencer.</h2>
+        <p className={styles.lead} {...reveal("up", 80)}>
           Bloom Pro quand tu veux, avec 14 jours d’essai. Annulable en 2 clics
           dans les réglages de ton iPhone.
         </p>
         <div className={styles.plans}>
-          <article className={styles.plan}>
+          <article className={styles.plan} {...reveal("up", 120)}>
             <div>
               <h3 className={styles.planName}>Gratuit</h3>
               <p className={styles.price}>0 €</p>
@@ -46,7 +47,7 @@ export default function Pricing() {
               </Button>
             </div>
           </article>
-          <article className={`${styles.plan} ${styles.pro}`}>
+          <article className={`${styles.plan} ${styles.pro}`} {...reveal("up", 240)}>
             <div className={styles.proHead}>
               <h3 className={styles.planName}>Bloom Pro</h3>
               <span className={styles.badge}>14 jours offerts</span>

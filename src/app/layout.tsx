@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import "./globals.css";
 
 // Police variable : un seul fichier couvre les graisses 400 à 800.
@@ -47,6 +48,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollReveal />
       </body>
     </html>
   );

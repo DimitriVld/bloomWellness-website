@@ -1,5 +1,6 @@
 import PhoneFrame from "@/components/ui/PhoneFrame/PhoneFrame";
 import styles from "./Features.module.scss";
+import { reveal } from "@/lib/reveal";
 
 const SMALL_CARDS = [
   {
@@ -37,36 +38,37 @@ export default function Features() {
       <span id="features" aria-hidden="true" />
       <span id="showcase" aria-hidden="true" />
       <div className="container">
-        <h2 className={`h2 ${styles.title}`}>
+        <h2 className={`h2 ${styles.title}`} {...reveal()}>
           Tout ce qu’il faut, rien de ce qui fatigue.
         </h2>
         <div className={styles.bento}>
-          <article className={`${styles.card} ${styles.big}`}>
+          <article className={`${styles.card} ${styles.big}`} {...reveal()}>
             <p className="eyebrow">Repas</p>
             <h3 className={styles.bigTitle}>Note tes repas sans effort</h3>
             <p className={styles.bigText}>
               Recherche CIQUAL et Open Food Facts, scan du code-barres ou photo
               de l’assiette avec Bloom Pro.
             </p>
-            <div className={styles.shot}>
+            <div className={styles.shot} {...reveal("rise", 200)}>
               <PhoneFrame screen="recherche" alt="Résultats de recherche pour poulet" sizes="240px" />
             </div>
           </article>
-          <article className={`${styles.card} ${styles.big} ${styles.dark}`}>
+          <article className={`${styles.card} ${styles.big} ${styles.dark}`} {...reveal("up", 120)}>
             <p className={`eyebrow ${styles.eyebrowLime}`}>Sport</p>
             <h3 className={styles.bigTitle}>Ton coach muscu dans la poche</h3>
             <p className={styles.bigText}>
               Programme selon ton matériel et ton temps, séries et repos guidés,
               et le bon moment pour ajouter du poids.
             </p>
-            <div className={styles.shot}>
+            <div className={styles.shot} {...reveal("rise", 320)}>
               <PhoneFrame screen="seance" alt="Séance en cours" sizes="240px" />
             </div>
           </article>
-          {SMALL_CARDS.map((card) => (
+          {SMALL_CARDS.map((card, i) => (
             <article
               key={card.title}
               className={[styles.card, styles.small, card.tone].filter(Boolean).join(" ")}
+              {...reveal("up", (i % 3) * 90)}
             >
               <h3 className={styles.smallTitle}>{card.title}</h3>
               <p className={styles.smallText}>{card.text}</p>

@@ -4,6 +4,7 @@ import ContactForm from "@/components/Contact/ContactForm";
 import { InstagramIcon, MailIcon } from "@/components/ui/Icons";
 import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/site";
 import styles from "./contact.module.scss";
+import { reveal } from "@/lib/reveal";
 
 export const metadata: Metadata = {
   title: "Contact · Bloom",
@@ -25,7 +26,7 @@ export default function ContactPage() {
       </header>
 
       <div className={styles.layout}>
-        <section aria-labelledby="form-title" className={styles.formCard}>
+        <section aria-labelledby="form-title" className={styles.formCard} {...reveal()}>
           <h2 id="form-title" className="visually-hidden">
             Formulaire de contact
           </h2>
@@ -33,7 +34,7 @@ export default function ContactPage() {
         </section>
 
         <aside className={styles.aside}>
-          <section aria-labelledby="direct-title" className={styles.block}>
+          <section aria-labelledby="direct-title" className={styles.block} {...reveal("up", 120)}>
             <h2 id="direct-title" className={styles.blockTitle}>
               Écrire directement
             </h2>
@@ -62,7 +63,7 @@ export default function ContactPage() {
             </ul>
           </section>
 
-          <section aria-labelledby="quick-title" className={`${styles.block} ${styles.quick}`}>
+          <section aria-labelledby="quick-title" className={`${styles.block} ${styles.quick}`} {...reveal("up", 240)}>
             <h2 id="quick-title" className={styles.blockTitle}>
               Ta réponse est peut-être déjà là
             </h2>

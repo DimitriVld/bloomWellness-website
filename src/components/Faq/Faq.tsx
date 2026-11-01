@@ -1,4 +1,5 @@
 import styles from "./Faq.module.scss";
+import { reveal } from "@/lib/reveal";
 
 const QUESTIONS = [
   {
@@ -27,10 +28,10 @@ export default function Faq() {
   return (
     <section id="faq" className={styles.faq}>
       <div className="container">
-        <h2 className={styles.title}>Questions fréquentes</h2>
+        <h2 className={styles.title} {...reveal()}>Questions fréquentes</h2>
         <div className={styles.grid}>
-          {QUESTIONS.map(({ question, answer }) => (
-            <article key={question} className={styles.card}>
+          {QUESTIONS.map(({ question, answer }, i) => (
+            <article key={question} className={styles.card} {...reveal("up", (i % 2) * 100)}>
               <h3 className={styles.question}>{question}</h3>
               <p className={styles.answer}>{answer}</p>
             </article>
