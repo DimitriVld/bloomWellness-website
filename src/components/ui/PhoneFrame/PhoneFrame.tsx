@@ -12,6 +12,9 @@ export const APP_SCREENS = {
   amis: { src: "/images/app/placeholder-amis.webp", width: 600, height: 1013 },
 } as const;
 
+/** Hauteur / largeur de l'écran, calée sur les captures les plus hautes. */
+const SCREEN_RATIO = 1131 / 600;
+
 interface PhoneFrameProps {
   screen: keyof typeof APP_SCREENS;
   alt: string;
@@ -29,19 +32,23 @@ export default function PhoneFrame({
   sizes = "290px",
 }: PhoneFrameProps) {
   const { src, width, height } = APP_SCREENS[screen];
+  // Capture plus courte que l'écran : affichée en entier, le bas se fond dans le fond de l'app.
+  const short = height / width < SCREEN_RATIO;
 
   return (
     <div className={[styles.phone, className].filter(Boolean).join(" ")}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        sizes={sizes}
-        loading={eager ? "eager" : "lazy"}
-        fetchPriority={eager ? "high" : undefined}
-        className={styles.screen}
-      />
+      <div className={styles.screen}>
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes={sizes}
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : undefined}
+          className={short ? `${styles.img} ${styles.fade}` : styles.img}
+        />
+      </div>
     </div>
   );
 }

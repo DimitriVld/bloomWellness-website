@@ -11,14 +11,22 @@
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.16);
 }
 
-/* Même hauteur pour tous les écrans, calée sur les captures les plus hautes */
+/* Même hauteur pour tous les écrans, calée sur les captures les plus hautes (SCREEN_RATIO) */
 .screen {
+  aspect-ratio: 600 / 1131;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #f0ebe4;
+}
+
+/* Capture toujours affichée en pleine largeur : jamais rognée sur les côtés */
+.img {
   width: 100%;
   height: auto;
-  aspect-ratio: 600 / 1131;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 32px;
+}
+
+.fade {
+  mask-image: linear-gradient(to bottom, #000 85%, transparent);
 }
 
 /* Tailles reprises de l'ancien site : 240 px, 200 px sur mobile */
